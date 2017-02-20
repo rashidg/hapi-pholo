@@ -1,0 +1,23 @@
+{
+  "name": "hapi-pholo",
+  "version": "1.0.0",
+  "description": "HAPI side of Pholo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashidg/hapi-pholo.git"
+  },
+  "keywords": [
+    "pholo",
+    "hapi"
+  ],
+  "author": "Rashid Gaziyev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rashidg/hapi-pholo/issues"
+  },
+  "homepage": "https://github.com/rashidg/hapi-pholo#readme"
+}
