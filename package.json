@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/rashidg/hapi-pholo/issues"
   },
-  "homepage": "https://github.com/rashidg/hapi-pholo#readme"
+  "homepage": "https://github.com/rashidg/hapi-pholo#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "hapi": "^16.1.0",
+    "hapi-auth-basic": "^4.2.0"
+  }
 }
