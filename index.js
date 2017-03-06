@@ -1,21 +1,9 @@
 var Hapi = require('hapi');
-var Sequelize = require('sequelize');
 var basicAuth = require('./src/middleware/basic-auth.js');
+var dbOptions = require('./src/middleware/db.js');
 
 const server = new Hapi.Server();
 server.connection({ port: 3000, host: 'localhost' });
-
-var sequelize_instance = new Sequelize('pholo_db', 'pholo', 'v3ry_s3cur3', {
-  host: 'localhost',
-  dialect: 'postgres',
-  //logging: 'false',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
-});
 
 server.register(
   [
@@ -27,15 +15,7 @@ server.register(
     },
     {
       register: require('hapi-sequelize'),
-      options:
-        {
-          name: 'pholo_db', // identifier
-          models: ['./src/models/*.js'],  // paths/globs to model files
-          sequelize: sequelize_instance, // sequelize instance
-          sync: true, // sync models - default false
-          forceSync: false // force sync (drops tables) - default false
-        }
-
+      options: dbOptions
     }
   ],
   () => {
