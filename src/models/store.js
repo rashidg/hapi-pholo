@@ -13,10 +13,10 @@ module.exports = function(sequelize, DataTypes){
 
   Store.sync().then(function () {
     // Table created
-    return Store.create({
-      name: 'Sash\'s pelmeni',
-      address: 'This is the place'
-    });
+    //return Store.create({
+    //  name: 'Sash\'s pelmeni',
+    //  address: 'This is the place'
+    //});
   }).catch(function(err){console.log(err);});
 
   return Store;

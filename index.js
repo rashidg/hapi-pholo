@@ -1,6 +1,7 @@
 var Hapi = require('hapi');
 var basicAuth = require('./src/middleware/basic-auth.js');
 var dbOptions = require('./src/middleware/db.js');
+var routes = require('./src/routes/store.js');
 
 const server = new Hapi.Server();
 server.connection({ port: 3000, host: 'localhost' });
@@ -29,8 +30,9 @@ server.register(
   }
 );
 
-//for (var route in routes)
-//    server.route(routes[route]);
+for (var route in routes) {
+  server.route(routes[route]);
+}
 
 server.route({
     method: 'GET',
